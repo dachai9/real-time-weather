@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时天气数据可视化</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>实时天气数据可视化</h1>
+        <div class="city">
+            <span>广州</span> <a href="javascript:;"> [切换城市]</a>
+            <div class="notfound">抱歉，未找到该城市</div>
+        </div>
+        <div class="cities">
+            <form>
+                <input type="text" placeholder="请输入城市..." id="inputCity">
+                <button type="button" onclick="changeCity()">确定</button>
+            </form>
+            <span>热门城市</span>
+            <div class="hotcity">
+                <ul>
+                    <li>北京</li>
+                    <li>上海</li>
+                    <li>广州</li>
+                    <li>深圳</li>
+                    <li>天津</li>
+                    <li>西安</li>
+                    <li>武汉</li>
+                    <li>成都</li>
+                    <li>石家庄</li>
+                    <li>郑州</li>
+                    <li>哈尔滨</li>
+                    <li>太原</li>
+                    <li>乌鲁木齐</li>
+                    <li>济南</li>
+                    <li>福州</li>
+                    <li>厦门</li>
+                    <li>合肥</li>
+                    <li>昆明</li>
+                    <li>重庆</li>
+                    <li>沈阳</li>
+                </ul>
+            </div>
+        </div>
+        <div class="showTime"></div>
+    </header>
+
+    <!-- 头部结束 -->
+
+    <!-- 主体部分 -->
+    <section class="mainbox">
+        <!-- 左边模块 -->
+        <div class="column">
+            <div class="panel bar">
+                <h2><span class="nowtime"></span> 实况</h2>
+                <div class="chart"></div>
+                <div class="chartRight">
+                    <div class="day">
+                        <span class="iconfont icon-cloudy-line"> 多云</span>
+                    </div>
+                    <div class="winddirect">
+                        <span class="iconfont icon-daohang"> 南风</span>
+                        <span class="iconfont icon-signal-wifi-line"> 1级</span>
+                    </div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>今日天气温度线形图</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <!-- <div class="panel pie">
+                <h2>今日天气温度饼形图</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div> -->
+        </div>
+
+        <!-- 中间模块 -->
+        <div class="column">
+            <!-- <div class="centerbox-t">
+                <div class="cbt-hd">
+                    <ul>
+                        <li>12</li>
+                        <li>123</li>
+                    </ul>
+                </div>
+                <div class="cbt-bd">
+                    <ul>
+                        <li>1223</li>
+                        <li>1232</li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="centerbox-b">
+                <div class="map map1"></div>
+                <div class="map map2"></div>
+                <div class="map map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+
+        <!-- 右边模块 -->
+        <div class="column">
+            <div class="panel bar2">
+                <h2>今日生活气象指数
+                    <a href="javascript:;" id="living-prev"><span class="iconfont icon-jian"></span></a>
+                    <a href="javascript:;" id="living-next"><span class="iconfont icon-jia"></span></a>
+                </h2>
+                <div class="chart chart1">
+                    <div data-index="icon-kongtiao1"></div>
+                    <div data-index="icon-yundong"></div>
+                    <div data-index="icon-fanghusan"></div>
+                    <div data-index="icon-yaopin"></div>
+                </div>
+                <div class="chart chart2">
+                    <div data-index="icon-zijia"></div>
+                    <div data-index="icon-kongqizhiliangchaxun"></div>
+                    <div data-index="icon-chenshan1"></div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line2">
+                <h2>7天天气温度线形图
+                    <a href="javascript:;"><span>温度</span></a>
+                    <a href="javascript:;"><span>日出日落</span></a>
+                </h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <!-- <div class="panel pie2">
+                <h2>今日天气温度柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- 主体部分结束 -->
+
+
+    <script src="./js/flexible.js"></script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <!-- <script src="https://webapi.amap.com/maps?v=1.4.15&key=023294f25fbaceef78444afcd63e81dd"></script> -->
+    <script src="./js/china.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
