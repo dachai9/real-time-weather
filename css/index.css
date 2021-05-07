@@ -59,6 +59,7 @@ header .city .notfound {
   overflow: hidden;
 }
 header .cities {
+  display: none;
   position: absolute;
   left: 50%;
   width: 25%;
